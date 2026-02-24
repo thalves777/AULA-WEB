@@ -1,64 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO: Título (50-60 caracteres, com palavra-chave principal) -->
-    <title>Curso de HTML5 e CSS3 - Academia Web HERO</title>
-    
-    <!-- SEO: Descrição (150-160 caracteres, aparece nos resultados do Google) -->
-    <meta name="description" content="Aprenda HTML5, CSS3 e JavaScript do zero. Curso completo de desenvolvimento web com projetos práticos. Certificado incluso.">
-    
-    <!-- SEO: Palavras-chave (menos importante hoje, mas ainda usada) -->
-    <meta name="keywords" content="HTML5, CSS3, JavaScript, desenvolvimento web, curso online">
-    
-    <!-- SEO: Open Graph (compartilhamento em redes sociais) -->
-    <meta property="og:title" content="Curso de HTML5 e CSS3 - Academia Web HERO">
-    <meta property="og:description" content="Aprenda desenvolvimento web do zero com projetos práticos.">
-    <meta property="og:image" content="https://cursos.x4trend.com/img/curso-web-hero.jpg">
-    <meta property="og:url" content="https://cursos.x4trend.com/curso-web">
-    
-    <!-- SEO: Canonical URL (evita conteúdo duplicado) -->
-    <link rel="canonical" href="https://cursos.x4trend.com/curso-web">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card do Herói</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================
+       RESET CSS
+    ========================== */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ==========================
+       VARIÁVEIS
+    ========================== */
+    :root {
+      --cor-primaria: #2563eb;
+      --cor-secundaria: #1e293b;
+      --cor-fundo: #f1f5f9;
+      --cor-card: #ffffff;
+      --cor-texto: #334155;
+      --radius: 16px;
+      --sombra: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --transicao: all 0.3s ease;
+    }
+
+    /* ==========================
+       ESTILO GLOBAL
+    ========================== */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--cor-fundo);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* ==========================
+       CARD
+    ========================== */
+    .card-heroi {
+      background: var(--cor-card);
+      width: 320px;
+      padding: 30px 25px;
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      text-align: center;
+      transition: var(--transicao);
+    }
+
+    .card-heroi:hover {
+      transform: scale(1.05);
+    }
+
+    /* ==========================
+       IMAGEM
+    ========================== */
+    .card-heroi img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid var(--cor-primaria);
+    }
+
+    /* ==========================
+       TÍTULO
+    ========================== */
+    .card-heroi h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--cor-secundaria);
+      margin-bottom: 15px;
+    }
+
+    /* ==========================
+       PARÁGRAFO
+    ========================== */
+    .card-heroi p {
+      font-size: 14px;
+      color: var(--cor-texto);
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    /* ==========================
+       BOTÃO
+    ========================== */
+    .card-heroi button {
+      background-color: var(--cor-primaria);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transicao);
+    }
+
+    .card-heroi button:hover {
+      background-color: #1d4ed8;
+      transform: scale(1.05);
+    }
+
+  </style>
 </head>
 <body>
-    <!-- SEO: Tags semânticas ajudam o Google a entender a estrutura -->
-    <header>
-        <h1>Academia Web HERO — Curso de HTML5 e CSS3</h1>
-        <nav aria-label="Menu principal">
-            <a href="#sobre">Sobre</a>
-            <a href="#missoes">Missões</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
 
-    <main>
-        <!-- SEO: article para conteúdo independente e rico -->
-        <article>
-            <h2>Por que aprender HTML5?</h2>
-            <p>HTML5 é a linguagem base da web. Aprenda a criar sites profissionais, acessíveis e otimizados para SEO.</p>
-            
-            <!-- SEO: Imagem com alt descritivo -->
-            <img src="img/html5-css3.jpg" alt="Logo HTML5 e CSS3 - Linguagens de desenvolvimento web" width="800" height="450">
-        </article>
+  <div class="card-heroi">
+    <img src="https://i.pravatar.cc/300" alt="Imagem do Herói">
+    <h2>Capitão Código</h2>
+    <p>
+      Especialista em resolver bugs críticos e proteger sistemas contra ameaças digitais.
+      Sempre pronto para uma nova missão!
+    </p>
+    <button>Solicitar Missão</button>
+  </div>
 
-        <section id="missoes">
-            <h2>Missões do Curso</h2>
-            <p>10 missões práticas para dominar HTML5, CSS3 e JavaScript.</p>
-        </section>
-    </main>
-
-    <aside>
-        <h3>Recursos Relacionados</h3>
-        <ul>
-            <li><a href="/blog/o-que-e-html5">O que é HTML5?</a></li>
-            <li><a href="/blog/seo-para-iniciantes">SEO para Iniciantes</a></li>
-        </ul>
-    </aside>
-
-    <footer>
-        <p>&copy; 2026 Academia Web HERO | <a href="/contato">Contato</a></p>
-    </footer>
 </body>
 </html>
