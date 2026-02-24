@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Card do Herói</title>
+  <title>Aventura e Descoberta - </title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ==========================
-       RESET CSS
+
+    /* =========================
+       RESET + CONFIG GLOBAL
     ========================== */
     *,
     *::before,
@@ -20,113 +21,226 @@
       box-sizing: border-box;
     }
 
-    /* ==========================
-       VARIÁVEIS
-    ========================== */
     :root {
-      --cor-primaria: #2563eb;
-      --cor-secundaria: #1e293b;
-      --cor-fundo: #f1f5f9;
+      --cor-primaria: #0ea5e9;
+      --cor-secundaria: #0f172a;
+      --cor-fundo: #f8fafc;
       --cor-card: #ffffff;
       --cor-texto: #334155;
-      --radius: 16px;
-      --sombra: 0 10px 25px rgba(0, 0, 0, 0.08);
-      --transicao: all 0.3s ease;
+      --radius: 12px;
+      --sombra: 0 8px 20px rgba(0,0,0,0.08);
+      --transicao: 0.3s ease;
     }
 
-    /* ==========================
-       ESTILO GLOBAL
-    ========================== */
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: var(--cor-fundo);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      color: var(--cor-texto);
+      line-height: 1.6;
     }
 
-    /* ==========================
-       CARD
+    /* =========================
+       HEADER
     ========================== */
-    .card-heroi {
-      background: var(--cor-card);
-      width: 320px;
-      padding: 30px 25px;
-      border-radius: var(--radius);
-      box-shadow: var(--sombra);
-      text-align: center;
+    header {
+      background: var(--cor-secundaria);
+      color: #fff;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
       transition: var(--transicao);
     }
 
-    .card-heroi:hover {
-      transform: scale(1.05);
+    nav a:hover {
+      color: var(--cor-primaria);
     }
 
-    /* ==========================
-       IMAGEM
+    /* =========================
+       HERO SECTION
     ========================== */
-    .card-heroi img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 4px solid var(--cor-primaria);
-    }
-
-    /* ==========================
-       TÍTULO
-    ========================== */
-    .card-heroi h2 {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--cor-secundaria);
-      margin-bottom: 15px;
-    }
-
-    /* ==========================
-       PARÁGRAFO
-    ========================== */
-    .card-heroi p {
-      font-size: 14px;
-      color: var(--cor-texto);
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
-
-    /* ==========================
-       BOTÃO
-    ========================== */
-    .card-heroi button {
-      background-color: var(--cor-primaria);
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+      background-size: cover;
+      background-position: center;
       color: #fff;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .hero button {
+      padding: 12px 25px;
       border: none;
-      padding: 12px 20px;
       border-radius: 30px;
+      background: var(--cor-primaria);
+      color: #fff;
       font-weight: 600;
       cursor: pointer;
       transition: var(--transicao);
     }
 
-    .card-heroi button:hover {
-      background-color: #1d4ed8;
+    .hero button:hover {
       transform: scale(1.05);
+    }
+
+    /* =========================
+       DESTINOS
+    ========================== */
+    .destinos {
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    .destinos h2 {
+      margin-bottom: 40px;
+      font-size: 28px;
+      color: var(--cor-secundaria);
+    }
+
+    .grid-destinos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    article {
+      background: var(--cor-card);
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      overflow: hidden;
+      transition: var(--transicao);
+    }
+
+    article:hover {
+      transform: translateY(-5px);
+    }
+
+    article img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    article h3 {
+      padding: 15px;
+      font-size: 18px;
+      color: var(--cor-secundaria);
+    }
+
+    article p {
+      padding: 0 15px 20px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--cor-secundaria);
+      color: #fff;
+      margin-top: 40px;
     }
 
   </style>
 </head>
 <body>
 
-  <div class="card-heroi">
-    <img src="https://i.pravatar.cc/300" alt="Imagem do Herói">
-    <h2>Capitão Código</h2>
-    <p>
-      Especialista em resolver bugs críticos e proteger sistemas contra ameaças digitais.
-      Sempre pronto para uma nova missão!
-    </p>
-    <button>Solicitar Missão</button>
-  </div>
+  <!-- =========================
+       CABEÇALHO
+  ========================== -->
+  <header>
+    <h1>Aventura e Descoberta</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Destinos</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <!-- =========================
+       SEÇÃO PRINCIPAL (HERO)
+  ========================== -->
+  <main>
+
+    <section class="hero">
+      <h2>Descubra o Mundo com a Gente</h2>
+      <p>Viaje para os destinos mais incríveis e viva experiências inesquecíveis.</p>
+      <button>Explorar Agora</button>
+    </section>
+
+    <!-- =========================
+         SEÇÃO DE DESTINOS
+    ========================== -->
+    <section class="destinos">
+      <h2>Destinos Populares</h2>
+
+      <div class="grid-destinos">
+
+        <!-- DESTINO 1 -->
+        <article>
+          <img src="https://anoticiadoceara.com.br/wp-content/uploads/2024/06/Beira-Mar-de-Fortaleza-gera-R-4-milhoes-por-dia.RedeANC.webp" alt="Fortaleza">
+          <h3>Fortaleza</h3>
+          <p>A cidade do amor, cultura e gastronomia sofisticada.</p>
+        </article>
+
+        <!-- DESTINO 2 -->
+        <article>
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Maldivas">
+          <h3>Maldivas</h3>
+          <p>Praias paradisíacas com águas cristalinas e areia branca.</p>
+        </article>
+
+        <!-- DESTINO 3 -->
+        <article>
+          <img src="https://www.vagamundos.pt/wp-content/uploads/2024/02/cristo.jpg" alt="rio de janeiro">
+          <h3>Rio de janeiro</h3>
+          <p>A cidade que nunca dorme, cheia de energia e oportunidades.</p>
+        </article>
+        <!-- DESTINO 2 -->
+        <article>
+          <img src="https://institucional.seazone.com.br/wp-content/uploads/2024/11/salvador-brasilturis.webp" alt="Bahia">
+          <h3>Bahia</h3>
+          <p>Praias paradisíacas com águas cristalinas e areia branca.</p>
+        </article>
+
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       RODAPÉ
+  ========================== -->
+  <footer>
+    <p>© 2026 Explore Mundo - Todos os direitos reservados</p>
+  </footer>
 
 </body>
 </html>
